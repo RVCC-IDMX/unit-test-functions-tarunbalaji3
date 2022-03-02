@@ -16,7 +16,10 @@
  * example: 'Buzz Lightyear' returns 'Lightyear, Buzz'
  */
 function nameShuffle(str) {
-  // write your code here & return value
+  const stringArray = str.split(" ");
+  const lastName = stringArray[1];
+  const firstName = stringArray[0];
+  return `${lastName}, ${firstName}`;
 }
 
 /**
@@ -34,7 +37,12 @@ function nameShuffle(str) {
  * example: '&', '&' returns true
  */
 function isStrangePair(str1, str2) {
-  // write your code here & return value
+  const stringArray1 = str1.split("");
+  const stringArray2 = str2.split("");
+  if (stringArray1[0] === stringArray2[stringArray2.length - 1]) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -46,7 +54,12 @@ function isStrangePair(str1, str2) {
  * example: '98.6%' returns 0.986
  */
 function convertToDecimal(percent) {
-  // write your code here & return value
+  const stringArray = percent.split("");
+  stringArray.pop();
+  const string = stringArray.join("");
+  const num = string * 1;
+  const numPercent = num / 100;
+  return numPercent;
 }
 
 /**
@@ -59,7 +72,12 @@ function convertToDecimal(percent) {
  * example: [1, 2, 3, 4], [4, 3, 2, 1, 5] returns false
  */
 function checkSameSum(a1, a2) {
-  // write your code here & return value
+  const total1 = a1.reduce((total, num) => total + num, 0);
+  const total2 = a2.reduce((total, num) => total + num, 0);
+  if (total1 === total2) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -70,7 +88,8 @@ function checkSameSum(a1, a2) {
  * must use a closure to save the username
  */
 function saveLogin(name) {
-  // write your code here
+  const saveUsername = () => name;
+  return saveUsername;
 }
 
 module.exports = {
